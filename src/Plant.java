@@ -8,12 +8,19 @@ public class Plant implements Serializable {
     private long id;
     private String plantName;
     private List<Fertilizer> fertilizer;
+    private String type;
 
 // We have to create a 'zero-argument' constructor, so that Java can reserve space in memory for this object
     public Plant() {
     }
 
-//constructor
+    public Plant(String plantName, List<Fertilizer> fertilizer, String type) {
+        this.plantName = plantName;
+        this.fertilizer = fertilizer;
+        this.type = type;
+    }
+
+    //constructor
     public Plant(String plantName) {
         this.plantName = plantName;
     }
@@ -35,6 +42,14 @@ public class Plant implements Serializable {
         this.plantName = plantName;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public List<Fertilizer> getFertilizer() {
         return fertilizer;
     }
@@ -42,4 +57,6 @@ public class Plant implements Serializable {
     public void setFertilizer(List<Fertilizer> fertilizer) {
         this.fertilizer = fertilizer;
     }
+
+
 }
